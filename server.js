@@ -7,8 +7,8 @@ var express = require('express'),
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/apidb');
-
+//mongoose.connect('mongodb://localhost/apidb');
+mongoose.connect('mongodb://user:pass@ds121535.mlab.com:21535/wepack');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
