@@ -20,3 +20,11 @@ exports.create_a_trip = function(req, res) {
       res.json(trip);
   });
 };
+
+exports.add_to_trip = function(req, res) {
+    Trip.findOneAndUpdate({ _id : req.body._id }, {$push: {items: req.body.item}}, function(err, item) {
+        if (err)
+          res.send(err);
+          //res.json(trip);
+    });
+};

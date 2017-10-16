@@ -1,11 +1,13 @@
 'use strict';
 module.exports = function(app) {
-  var firstController = require('../controllers/firstController');
+  var ListsController = require('../controllers/ListsController');
 
   // todoList Routes
-app.route('/trip/:tripName').post(firstController.create_a_trip);
+app.route('/trip/:tripName').post(ListsController.create_a_trip);
 
-app.route('/trip').get(firstController.list_all_trips);
+app.route('/trip').get(ListsController.list_all_trips);
+
+app.route('/trip/add/:item').post(ListsController.add_to_trip);
 
 
 

@@ -12,6 +12,8 @@ exports.get_all_items = function(req, res) {
   });
 };
 
+
+//posts an item based on keyword
 exports.post_item = function(req, res) {
     Items.findOneAndUpdate({keyword: req.body.keyword}, {$push: {items: req.body.item}}, function(err, item) {
         if(err) {
