@@ -1,8 +1,16 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    User = mongoose.model('Keyword');
+    Keyword = mongoose.model('Keyword');
 
+exports.get_all_keywords = function(req, res) {
+    Keyword.find({}, function(err, keywords) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(keywords)
+    });
+};
 
 exports.create_new_keyword = function(req, res) {
     var new_keyword = new Keyword(req.body);

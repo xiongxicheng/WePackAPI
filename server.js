@@ -4,7 +4,7 @@ var express = require('express'),
   mongoose = require('mongoose'),
   Trip = require('./api/models/TripModel'),
   User = require('./api/models/UserModel'),
-  Item = require('./api/models/ItemModel')
+  Item = require('./api/models/KeywordModel')
   bodyParser = require('body-parser');
 
 
@@ -16,11 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var routes = require('./api/routes/TripRoutes');
-var itemsRoutes = require('./api/routes/ItemRoutes');
+var keywordRoutes = require('./api/routes/KeywordRoutes');
 var userRoutes = require('./api/routes/UserRoutes');
 
 routes(app); //register the route
-itemsRoutes(app);
+keywordRoutes(app);
 userRoutes(app);
 
 app.listen(port);
