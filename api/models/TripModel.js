@@ -13,25 +13,20 @@ var TripSchema = new Schema({
     default: Date.now
   },
   owner: {
-      type: String
-  },
-  items: [String]
-
-});
-
-var ItemsSchema = new Schema({
-  keyword: {
-    type: String,
-  },
-  Created_date: {
-    type: Date,
-    default: Date.now
+      type: String,
+      required: 'need owner username'
   },
   items: {
       type: [String],
       default: []
+  },
+  followers: {
+      type: [String],
+      default:[]
   }
+
 });
 
-module.exports = mongoose.model('Trips', TripSchema);
-module.exports = mongoose.model('Items', ItemsSchema);
+
+
+module.exports = mongoose.model('Trip', TripSchema);

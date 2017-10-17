@@ -2,7 +2,7 @@
 
 
 var mongoose = require('mongoose'),
-  Items = mongoose.model('Items');
+  Items = mongoose.model('Item');
 
 exports.get_all_items = function(req, res) {
   Items.find({}, function(err, task) {
